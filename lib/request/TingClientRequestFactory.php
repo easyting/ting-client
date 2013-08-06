@@ -68,7 +68,10 @@ class TingClientRequestFactory {
 	 * @ return TingClientInfomediaArticleRequest
 	 */
 	function getInfomediaArticleRequest(){
-		return new TingClientInfomediaArticleRequest($this->urls['infomedia']);
+    if (!empty($this->urls['infomedia'])) {
+      return new TingClientInfomediaArticleRequest($this->urls['infomedia']);
+    }
+    return NULL;
 	}
 
 	/**
