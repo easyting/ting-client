@@ -40,6 +40,9 @@ class TingClientSearchRequest extends TingClientRequest {
 
     // These defaults are always needed.
     $this->setParameter('action', 'searchRequest');
+    // Fetch all relations.
+    $this->setParameter('allRelations', 1);
+    $this->setParameter('relationData', 'full');
     if (!isset($parameters['format']) || empty($parameters['format'])) {
       $this->setParameter('format', 'dkabm');
     }
